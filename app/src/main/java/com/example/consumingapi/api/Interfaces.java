@@ -33,8 +33,11 @@ public interface Interfaces {
     @GET("singleflag/{id}")
     Call<Flag> getFlagById(@Path("id") int id);
 
-    @Multipart
-    @POST("Upload")
-    Call<Flag> uploadFlag(@Part MultipartBody.Part img);
+    @Multipart //for image
+    @POST("upload")
+    Call<Flag> uploadFlag(@Part MultipartBody.Part img); //image file data type MultipartBody
+
+    @POST("addcountry")
+    Call<Void> addCountry(@Body Flag flag);
 
 }
